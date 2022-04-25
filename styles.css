@@ -1,0 +1,240 @@
+/* Utils */
+
+:root {
+    --panel-width: 30vw;
+    --form-width: 50vw;
+    --spacing-height: 15vh;
+    --spacing-height-double: calc(2 * var(--spacing-height));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: black;
+}
+
+@font-face {
+    font-family: nordic;
+    src: url(./fonts/Norse-Bold.otf);
+}
+
+body {
+    margin: 0;
+    font-family: 'roboto', sans-serif;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout */
+
+/* Title Side */
+
+.title-container img {
+    max-height: 1.25em;
+}
+
+.title-container p {
+    margin: 0 0 0 0.25em;
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 16px;
+}
+
+.container {
+    margin-left: 10vw;
+    width: 80vw;
+    height: 100vh;
+    justify-content: center;
+}
+
+.title-side {
+    width: var(--panel-width);
+    height: 100vh;
+}
+
+.title-side div {
+    background-color: rgb(0, 0, 0, .5);
+}
+
+.image-refence-container {
+    margin-top: auto;
+    text-align: center;
+    color: white;
+}
+
+.image-refence-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.title-container {
+    margin-top: max(var(--spacing-height), 1.25em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    height: max(var(--spacing-height), 1.25em);
+    font-family: nordic;
+    color: white;
+}
+
+/* Form Stuff */
+
+.form-side {
+    width: var(--form-width);
+    height: 100vh;
+    background-color: white;
+}
+
+.form-text-container {
+    background-color: rgb(245, 245, 245);
+}
+
+.form-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    height: var(--spacing-height-double);
+    padding: 2em;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.form-text p {
+    margin: 5px;
+}
+
+.form-container {
+    height: calc(100vh - var(--spacing-height-double));
+}
+
+.form-container p {
+    padding-left: .5em;
+    width: 32em;
+    font-weight: 600;
+    font-size: 1em;
+    padding-left: 48px;
+    padding-top: 8px;
+    margin-bottom: 0;
+}
+
+.form-input-container {
+    box-shadow: 0 8px 6px -6px lightgray;
+    padding: 32px 48px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "first-name last-name""email phone-number""password password-confirm";
+    grid-gap: 1em;
+    width: 40vw;
+}
+
+.form-input-container input{
+    display: block;
+    width: 16vw;
+    height: 2em;
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.form-input-container label {
+    color: black;
+    font-weight: 600;
+    font-size: .75em;
+}
+
+.form-submit-container {
+    padding: 18px 48px;
+}
+
+.form-submit-container p {
+    font-size: .75em;
+    font-weight: 600;
+    margin: 0px;
+    padding: 8px 0px;
+}
+
+.form-submit-container button {
+    width: 16vw;
+    height: 3em;
+    border-color: lightgray;
+    background-color: #596D48;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 1em;
+    cursor: pointer;
+    color: white;
+}
+
+input:focus {
+    border-color: #596D48;
+    outline: none;
+}
+
+.error {
+    border-color: red;
+    outline: none;
+}
+
+.error-text::before {
+    content: "\2757";
+}
+
+.form-submit-container a {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+ /* ID Formatting */
+
+#first-name {
+    grid-area: first-name;
+}
+
+#last-name {
+    grid-area: last-name;
+}
+
+#email {
+    grid-area: email;
+}
+
+#phone-number {
+    grid-area: phone-number;
+}
+
+#password {
+    grid-area: password;
+}
+
+#password-confirm {
+    grid-area: password-confirm;
+}
+
+#panel-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    width: var(--panel-width);
+    height: 100vh;
+    object-fit: cover;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+    <title>Sign Up Form</title>
+</head>
+
+<body>
+    <div class="container row">
+        <div class="title-side col">
+            <img src="./images/panel-image.jpg" alt="Oh god..." id="panel-img">
+            <div class="title-container">
+                <img src="./images/logo-image.png" alt="Oh no...">
+                <p class="title-text">ODIN</p>
+            </div>
+            <div class="image-refence-container">
+                <p>Photo by <a
+                        href="https://unsplash.com/@lellen81?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lynn
+                        Danielson</a> on <a
+                        href="https://unsplash.com/s/photos/shenandoah?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                </p>
+            </div>
+        </div>
+        <div class="form-side col">
+            <div class="form-text-container">
+                <div class="form-text">
+                    <p>This is not a real service! One day you might need a nice form like this though, and you are welcome to take my spaghetti and use it for yourself :D</p>
+                    <p>Now let's get down to the data...</p>
+                </div>
+            </div>
+            <div class="form-container col">
+                <form>
+                    <p>Here's our form!</p>
+                    <div class="form-input-container">
+                        <div class="grid-container">
+                            <div class="form-entry" id="first-name">
+                                <label for="first-name">First Name</label>
+                                <input type="text" name="first-name">
+                            </div>
+                            <div class="form-entry" id="last-name">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" name="last-name">
+                            </div>
+                            <div class="form-entry" id="email">
+                                <label for="email">Email Address</label>
+                                <input type="email" name="email">
+                            </div>
+                            <div class="form-entry" id="phone-number">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="tel" name="phone-number">
+                            </div>
+                            <div class="form-entry" id="password">
+                                <label for="password">Password</label>
+                                <input type="text" name="password">
+                            </div>
+                            <div class="form-entry" id="password-confirm">
+                                <label for="password-confirm">Confirm Password</label>
+                                <input type="text" name="password-confirm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-submit-container">
+                        <button type="submit">Create Account</button>
+                        <p>Or if you have an account, <a href="#">Log in</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
