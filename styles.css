@@ -34,6 +34,10 @@ body {
     flex-direction: column;
 }
 
+.error {
+    border: 1px solid red !important;
+}
+
 /* Layout */
 
 /* Title Side */
@@ -138,7 +142,6 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: "first-name last-name""email phone-number""password password-confirm";
-    grid-gap: 1em;
     width: 40vw;
 }
 
@@ -169,7 +172,7 @@ body {
     padding: 8px 0px;
 }
 
-.form-submit-container button {
+.form-submit-container input[type="submit"] {
     width: 16vw;
     height: 3em;
     border-color: lightgray;
@@ -189,18 +192,15 @@ input:focus {
     outline: none;
 }
 
-.error {
-    border-color: red;
-    outline: none;
-}
-
-.error-text::before {
-    content: "\2757";
-}
-
 .form-submit-container a {
     color: darkgreen;
     text-decoration: none;
+}
+
+.form-entry div {
+    color: red;
+    font-size: .75em;
+    min-height: 1.25em;
 }
 
  /* ID Formatting */

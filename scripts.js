@@ -1,17 +1,23 @@
-const button = document.querySelector('button[type="submit"]');
-const password_label = document.querySelector('label[for="password"]');
-const password_confirm_label = document.querySelector('label[for="password-confirm"]');
+const form = document.querySelector('form');
 
-button.addEventListener('click', function(e) {
-    e.preventDefault();
-    const password = document.querySelector('input[name="password"]').value;
-    const password_confirm = document.querySelector('input[name="password-confirm"]').value;
-    if (password !== password_confirm) {
-        password_label.classList.add('error-text');
-        password_confirm_label.classList.add('error-text');
-    } else {
-        password_label.classList.remove('error-text');
-        password_confirm_label.classList.remove('error-text');
-        button.submit();
+form.addEventListener('submit', (e) => {
+    const passwordInput = document.querySelector('input[name="password"]');
+    const passwordConfirmInput = document.querySelector('input[name="password-confirm"]');
+
+    if (passwordInput.value != passwordConfirmInput.value) {
+        e.preventDefault();
+        passwordInput.classList.add('error');
+        passwordConfirmInput.classList.add('error');
+        passwordInput.nextElementSibling.innerHTML = 'Passwords do not match';
+
+        // Remove the incorrect error class once it matches
+        passwordConfirmInput.addEventListener('input', function () {
+            if (passwordInput.value == passwordConfirmInput.value) {
+                passwordInput.classList.remove('error');
+                passwordConfirmInput.classList.remove('error');
+                passwordInput.nextElementSibling.innerHTML = '';
+            }
+        });
+        return false;
     }
 });
